@@ -1,0 +1,14 @@
+D:\Programming\JAVA\Labs\LAB12\src\main\java\com\university\project\dto\ExpenseDTO.java
+D:\Programming\JAVA\Labs\LAB12\src\main\java\com\university\project\entity\ExpenseEntity.java
+D:\Programming\JAVA\Labs\LAB12\src\main\java\com\university\project\mapper\ExpenseMapper.java
+D:\Programming\JAVA\Labs\LAB12\src\main\java\com\university\project\dto\CarDTO.java
+D:\Programming\JAVA\Labs\LAB12\src\main\java\com\university\project\service\ExpenseService.java
+D:\Programming\JAVA\Labs\LAB12\src\main\java\com\university\project\dto\CarExpensesDTO.java
+D:\Programming\JAVA\Labs\LAB12\src\main\java\com\university\project\entity\CarEntity.java
+D:\Programming\JAVA\Labs\LAB12\src\main\java\com\university\project\repository\ExpenseRepository.java
+D:\Programming\JAVA\Labs\LAB12\src\main\java\com\university\project\service\CarService.java
+D:\Programming\JAVA\Labs\LAB12\src\main\java\com\university\project\controller\ExpenseController.java
+D:\Programming\JAVA\Labs\LAB12\src\main\java\com\university\project\controller\CarController.java
+D:\Programming\JAVA\Labs\LAB12\src\main\java\com\university\project\mapper\CarMapper.java
+D:\Programming\JAVA\Labs\LAB12\src\main\java\com\university\project\VehicleMaintenanceCostsApplication.java
+D:\Programming\JAVA\Labs\LAB12\src\main\java\com\university\project\repository\CarRepository.java
