@@ -9,5 +9,4 @@ public class VehicleMaintenanceCostsApplication {
     public static void main(String[] args) {
         SpringApplication.run(VehicleMaintenanceCostsApplication.class, args);
     }
-
 }

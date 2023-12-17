@@ -7,6 +7,7 @@ import com.university.project.service.ExpenseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -39,7 +40,6 @@ public class CarController {
 
     @PostMapping("/cars")
     public ResponseEntity<CarDTO> createCar(@RequestBody CarDTO carDTO) {
-        carDTO.setId(0L);
         carService.createOrUpdateCar(carDTO);
         return new ResponseEntity<>(carDTO, HttpStatus.CREATED);
     }
@@ -49,5 +49,11 @@ public class CarController {
         carDTO.setId(id);
         carService.createOrUpdateCar(carDTO);
         return new ResponseEntity<>(carDTO, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/cars/{id}")
+    public ResponseEntity<CarDTO> deleteCar(@PathVariable Long id) {
+        carService.deleteCar(id);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

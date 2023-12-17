@@ -5,6 +5,7 @@ import com.university.project.service.ExpenseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -34,7 +35,6 @@ public class ExpenseController {
 
     @PostMapping("/expenses")
     public ResponseEntity<ExpenseDTO> createExpense(@RequestBody ExpenseDTO expenseDTO) {
-        expenseDTO.setId(0L);
         expenseService.createOrUpdateExpense(expenseDTO);
         return new ResponseEntity<>(expenseDTO, HttpStatus.CREATED);
     }
@@ -44,5 +44,11 @@ public class ExpenseController {
         expenseDTO.setId(id);
         expenseService.createOrUpdateExpense(expenseDTO);
         return new ResponseEntity<>(expenseDTO, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/expenses/{id}")
+    public ResponseEntity<ExpenseDTO> deleteExpense(@PathVariable Long id) {
+        expenseService.deleteExpense(id);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

@@ -2,6 +2,7 @@ package com.university.project.mapper;
 
 import com.university.project.dto.CarDTO;
 import com.university.project.entity.CarEntity;
+import com.university.project.entity.ExpenseEntity;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.processing.Generated;
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-12-16T18:08:56+0300",
+    date = "2023-12-17T03:00:55+0300",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 17.0.9 (Amazon.com Inc.)"
 )
 @Component
@@ -37,12 +38,19 @@ public class CarMapperImpl implements CarMapper {
             return null;
         }
 
-        CarEntity carEntity = new CarEntity();
+        Long id = null;
+        String make = null;
+        String model = null;
+        int year = 0;
 
-        carEntity.setId( carDTO.getId() );
-        carEntity.setMake( carDTO.getMake() );
-        carEntity.setModel( carDTO.getModel() );
-        carEntity.setYear( carDTO.getYear() );
+        id = carDTO.getId();
+        make = carDTO.getMake();
+        model = carDTO.getModel();
+        year = carDTO.getYear();
+
+        List<ExpenseEntity> expenses = null;
+
+        CarEntity carEntity = new CarEntity( id, make, model, year, expenses );
 
         return carEntity;
     }

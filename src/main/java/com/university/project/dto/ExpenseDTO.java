@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ExpenseDTO {
     private Long id;
-    private CarEntity car;
+    private Long carId;
     private String date;
     private String category;
     private String description;

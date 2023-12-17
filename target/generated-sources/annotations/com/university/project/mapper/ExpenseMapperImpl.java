@@ -1,6 +1,7 @@
 package com.university.project.mapper;
 
 import com.university.project.dto.ExpenseDTO;
+import com.university.project.entity.CarEntity;
 import com.university.project.entity.ExpenseEntity;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-12-16T18:08:57+0300",
+    date = "2023-12-17T03:00:55+0300",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 17.0.9 (Amazon.com Inc.)"
 )
 @Component
@@ -23,8 +24,8 @@ public class ExpenseMapperImpl implements ExpenseMapper {
 
         ExpenseDTO expenseDTO = new ExpenseDTO();
 
+        expenseDTO.setCarId( expenseCarId( expense ) );
         expenseDTO.setId( expense.getId() );
-        expenseDTO.setCar( expense.getCar() );
         expenseDTO.setDate( expense.getDate() );
         expenseDTO.setCategory( expense.getCategory() );
         expenseDTO.setDescription( expense.getDescription() );
@@ -41,8 +42,8 @@ public class ExpenseMapperImpl implements ExpenseMapper {
 
         ExpenseEntity expenseEntity = new ExpenseEntity();
 
+        expenseEntity.setCar( expenseDTOToCarEntity( expenseDTO ) );
         expenseEntity.setId( expenseDTO.getId() );
-        expenseEntity.setCar( expenseDTO.getCar() );
         expenseEntity.setDate( expenseDTO.getDate() );
         expenseEntity.setCategory( expenseDTO.getCategory() );
         expenseEntity.setDescription( expenseDTO.getDescription() );
@@ -63,5 +64,39 @@ public class ExpenseMapperImpl implements ExpenseMapper {
         }
 
         return list;
+    }
+
+    private Long expenseCarId(ExpenseEntity expenseEntity) {
+        if ( expenseEntity == null ) {
+            return null;
+        }
+        CarEntity car = expenseEntity.getCar();
+        if ( car == null ) {
+            return null;
+        }
+        Long id = car.getId();
+        if ( id == null ) {
+            return null;
+        }
+        return id;
+    }
+
+    protected CarEntity expenseDTOToCarEntity(ExpenseDTO expenseDTO) {
+        if ( expenseDTO == null ) {
+            return null;
+        }
+
+        Long id = null;
+
+        id = expenseDTO.getCarId();
+
+        String make = null;
+        String model = null;
+        int year = 0;
+        List<ExpenseEntity> expenses = null;
+
+        CarEntity carEntity = new CarEntity( id, make, model, year, expenses );
+
+        return carEntity;
     }
 }
