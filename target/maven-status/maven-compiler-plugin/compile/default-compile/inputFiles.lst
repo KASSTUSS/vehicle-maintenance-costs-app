@@ -1,6 +1,7 @@
 D:\Programming\JAVA\Labs\LAB12\src\main\java\com\university\project\dto\ExpenseDTO.java
 D:\Programming\JAVA\Labs\LAB12\src\main\java\com\university\project\entity\ExpenseEntity.java
 D:\Programming\JAVA\Labs\LAB12\src\main\java\com\university\project\mapper\ExpenseMapper.java
+D:\Programming\JAVA\Labs\LAB12\src\main\java\com\university\project\CorsConfig.java
 D:\Programming\JAVA\Labs\LAB12\src\main\java\com\university\project\dto\CarDTO.java
 D:\Programming\JAVA\Labs\LAB12\src\main\java\com\university\project\service\ExpenseService.java
 D:\Programming\JAVA\Labs\LAB12\src\main\java\com\university\project\dto\CarExpensesDTO.java
